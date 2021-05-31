@@ -1,0 +1,15 @@
+includes:
+    - ./vendor/jumptwentyfour/php-coding-standards/phpstan.neon
+    - ./phpstan-baseline.neon
+parameters:
+
+    # The level 8 is the highest level
+    level: 8
+
+    excludePaths:
+        - 'vendor/*'
+        - '_ide_helper.php'
+        - '_ide_helper_models.php'
+        - '.phpstorm.meta.php'
+
+    checkMissingIterableValueType: false
