@@ -37,26 +37,18 @@ class User extends Authenticatable
     }
 
     // user has many comments
-    public function comments()
+    public function comments(): HasMany
     {
         return $this->hasMany(Comment::class, 'from_user');
     }
 
     public function can_post()
     {
-        $role = $this->role;
-        if ($role == 'author' || $role == 'admin') {
-            return true;
-        }
-        return false;
+        return $this->role === 'author' || $this->role === 'admin';
     }
 
     public function is_admin()
     {
-        $role = $this->role;
-        if ($role == 'admin') {
-            return true;
-        }
-        return false;
+        return $this->role === 'admin';
     }
 }

@@ -16,5 +16,5 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             __DIR__ . '/app/AutoConvert/Formatters/Exceptions/Decline'
         ]
     ]);
-    $containerConfigurator->import(__DIR__ . '/vendor/jumptwentyfour/php-coding-standards/ecs.php');
+    $containerConfigurator->import(__DIR__ . '/vendor/jumptwentyfour/laravel-coding-standards/ecs.php');
 };

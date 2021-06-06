@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,7 @@ Route::get('/', [PostController::class, 'index']);
 Route::get('/home', [PostController::class, 'index']);
 
 //authentication
-Route::get('/logout', 'UserController@logout');
+Route::get('/logout', [UserController::class, 'logout']);
 Route::group(['prefix' => 'auth'], function () {
     Auth::routes();
 });
